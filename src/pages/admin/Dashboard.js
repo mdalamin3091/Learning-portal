@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { AddVideoModal } from "./videos/AddVideoModal";
 
 const Dashboard = () => {
   return (
@@ -7,7 +8,7 @@ const Dashboard = () => {
       <div className="mx-auto max-w-7xl px-5 lg:px-0">
         <div className="px-3 md:lg:xl:px-40  py-20 bg-opacity-10">
           <div className="grid grid-cols-1 md:grid-cols-2  gap-6 p-8">
-            <Link to="/admin/videos" className="dashboard-item-card">
+            <Link to={"/admin/videos"} className="dashboard-item-card">
               <svg
                 fill="none"
                 viewBox="0 0 24 24"

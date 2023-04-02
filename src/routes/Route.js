@@ -11,6 +11,8 @@ import DashboardAssignments from "../pages/admin/assignments/DashboardAssignment
 import DashboardQuizes from "../pages/admin/quiz/DashboardQuizes";
 import AssignmentMark from "../pages/admin/AssignmentMark";
 import AddVideo from "../pages/admin/videos/AddVideo";
+import AddAssignment from "../pages/admin/assignments/AddAssignment";
+import AddQuiz from "../pages/admin/quiz/AddQuiz";
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +39,7 @@ export const router = createBrowserRouter([
         path: "/coursePlayer/quiz/:id",
         element: <Quiz />,
       },
+      
       // all admin routes
       {
         path: "/admin",
@@ -61,6 +64,14 @@ export const router = createBrowserRouter([
       {
         path: "/admin/videos/addVideo",
         element: <AddVideo />,
+      },
+      {
+        path: "/admin/assignment/addAssignment",
+        element: <AddAssignment />,
+      },
+      {
+        path: "/admin/quiz/addQuiz",
+        element: <AddQuiz />,
       },
     ],
   },
