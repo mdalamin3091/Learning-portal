@@ -1,10 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-import CoursePlayer from "../pages/CoursePlayer";
-import Leaderboard from "../pages/Leaderboard";
-import Quiz from "../pages/Quiz";
+import Login from "../pages/shared/Login";
+import Register from "../pages/student//Register";
+import CoursePlayer from "../pages/student/CoursePlayer";
+import Leaderboard from "../pages/student/Leaderboard";
+import Quiz from "../pages/student/Quiz";
 import Layout from "../layout/Layout";
+import DashboardVideos from "../pages/admin/videos/DashboardVideos";
+import Dashboard from "../pages/admin/Dashboard";
+import DashboardAssignments from "../pages/admin/assignments/DashboardAssignments";
+import DashboardQuizes from "../pages/admin/quiz/DashboardQuizes";
+import AssignmentMark from "../pages/admin/AssignmentMark";
+import AddVideo from "../pages/admin/videos/AddVideo";
 
 export const router = createBrowserRouter([
   {
@@ -28,8 +34,33 @@ export const router = createBrowserRouter([
         element: <Leaderboard />,
       },
       {
-        path: "/quiz",
+        path: "/coursePlayer/quiz/:id",
         element: <Quiz />,
+      },
+      // all admin routes
+      {
+        path: "/admin",
+        element: <Dashboard />
+      },
+      {
+        path: "/admin/videos",
+        element: <DashboardVideos />
+      },
+      {
+        path: "/admin/assignments",
+        element: <DashboardAssignments />
+      },
+      {
+        path: "/admin/quiz",
+        element: <DashboardQuizes />,
+      },
+      {
+        path: "/admin/assignmentMark",
+        element: <AssignmentMark />,
+      },
+      {
+        path: "/admin/videos/addVideo",
+        element: <AddVideo />,
       },
     ],
   },

@@ -1,8 +1,8 @@
 import React from 'react';
-import Login from './pages/Login';
+import Layout from './layout/Layout';
 
 function App() {
-  return <Login />
+  return <Layout/>
 }
 
 export default App;

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import Navbar from "../components/Navbar";
-import Questions from "../components/student/quiz/Questions";
+// import Navbar from "../components/Navbar";
+import Questions from "../../components/student/quiz/Questions";
 
 const Quiz = () => {
   return (

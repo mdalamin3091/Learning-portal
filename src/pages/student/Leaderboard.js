@@ -1,8 +1,7 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import HeadRow from "../components/student/leaderboard/HeadRow";
-import DataRow from "../components/student/leaderboard/DataRow";
-import OwnPosition from "../components/student/leaderboard/OwnPosition";
+import HeadRow from "../../components/student/leaderboard/HeadRow";
+import DataRow from "../../components/student/leaderboard/DataRow";
+import OwnPosition from "../../components/student/leaderboard/OwnPosition";
 
 const Leaderboard = () => {
   return (

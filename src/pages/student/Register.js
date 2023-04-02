@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/image/learningportal.svg";
+import logo from "../../assets/image/learningportal.svg";
 const Register = () => {
   return (
     <section className="py-6 bg-primary h-screen grid place-items-center">

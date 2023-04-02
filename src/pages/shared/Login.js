@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/image/learningportal.svg"
+import logo from "../../assets/image/learningportal.svg"
 import { Link } from "react-router-dom";
 
 const Login = () => {

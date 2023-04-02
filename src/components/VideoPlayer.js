@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const VideoPlayer = () => {
   return (
@@ -30,12 +31,12 @@ const VideoPlayer = () => {
             এসাইনমেন্ট
           </a>
 
-          <a
-            href="./Quiz.html"
+          <Link
+            to="./Quiz/1"
             className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary"
           >
             কুইজে অংশগ্রহণ করুন
-          </a>
+          </Link>
         </div>
         <p className="mt-4 text-sm text-slate-400 leading-6">
           আপনারা যারা বিগিনার হিসেবে রিয়্যাক্ট জেস নিয়ে কাজ করা শুরু করেছেন,
