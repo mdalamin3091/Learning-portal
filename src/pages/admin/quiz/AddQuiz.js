@@ -11,7 +11,7 @@ const AddQuiz = () => {
     isCorrect: false,
   });
 
-  //   update state value by this functions
+  //  update state value by this functions
   const handleChange = (value, label) => {
     setOptionValue({
       ...optionValue,
@@ -19,7 +19,7 @@ const AddQuiz = () => {
     });
   };
 
-  //   generate unique Id function
+  //  generate unique Id function
   const generateId = (options) => {
     const max = options.reduce(
       (initialValue, option) => Math.max(initialValue, option.id),

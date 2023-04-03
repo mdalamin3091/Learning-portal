@@ -13,15 +13,38 @@ import AssignmentMark from "../pages/admin/AssignmentMark";
 import AddVideo from "../pages/admin/videos/AddVideo";
 import AddAssignment from "../pages/admin/assignments/AddAssignment";
 import AddQuiz from "../pages/admin/quiz/AddQuiz";
+import PublicRoute from "./PublicRoute";
+import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
+import StudentRoute from "./StudentRoute";
+import AdminLogin from "../pages/admin/AdminLogin";
+import ErrorPage from "../pages/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: (
+      <PublicRoute>
+        <Login />
+      </PublicRoute>
+    ),
   },
+
   {
     path: "/register",
-    element: <Register />,
+    element: (
+      <PublicRoute>
+        <Register />
+      </PublicRoute>
+    ),
+  },
+  {
+    path: "/admin/login",
+    element: (
+      <PublicRoute>
+        <AdminLogin />
+      </PublicRoute>
+    ),
   },
   {
     path: "/",
@@ -29,50 +52,108 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/coursePlayer",
-        element: <CoursePlayer />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <StudentRoute>
+              <CoursePlayer />{" "}
+            </StudentRoute>{" "}
+          </PrivateRoute>
+        ),
       },
       {
         path: "/leaderboard",
-        element: <Leaderboard />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <StudentRoute>
+              {" "}
+              <Leaderboard />{" "}
+            </StudentRoute>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/coursePlayer/quiz/:id",
-        element: <Quiz />,
+        element: (
+          <PrivateRoute>
+            <StudentRoute>
+              <Quiz />
+            </StudentRoute>
+          </PrivateRoute>
+        ),
       },
-      
+
+
       // all admin routes
       {
         path: "/admin",
-        element: <Dashboard />
+        element: (
+          <AdminRoute>
+            <Dashboard />
+          </AdminRoute>
+        ),
       },
       {
         path: "/admin/videos",
-        element: <DashboardVideos />
+        element: (
+          <AdminRoute>
+            <DashboardVideos />
+          </AdminRoute>
+        ),
       },
       {
         path: "/admin/assignments",
-        element: <DashboardAssignments />
+        element: (
+          <AdminRoute>
+            <DashboardAssignments />
+          </AdminRoute>
+        ),
       },
       {
         path: "/admin/quiz",
-        element: <DashboardQuizes />,
+        element: (
+          <AdminRoute>
+            <DashboardQuizes />
+          </AdminRoute>
+        ),
       },
       {
         path: "/admin/assignmentMark",
-        element: <AssignmentMark />,
+        element: (
+          <AdminRoute>
+            <AssignmentMark />
+          </AdminRoute>
+        ),
       },
       {
         path: "/admin/videos/addVideo",
-        element: <AddVideo />,
+        element: (
+          <AdminRoute>
+            <AddVideo />
+          </AdminRoute>
+        ),
       },
       {
         path: "/admin/assignment/addAssignment",
-        element: <AddAssignment />,
+        element: (
+          <AdminRoute>
+            <AddAssignment />
+          </AdminRoute>
+        ),
       },
       {
         path: "/admin/quiz/addQuiz",
-        element: <AddQuiz />,
+        element: (
+          <AdminRoute>
+            <AddQuiz />
+          </AdminRoute>
+        ),
       },
     ],
+  },
+  {
+    path:"*", 
+    element:<ErrorPage/>
   },
 ]);

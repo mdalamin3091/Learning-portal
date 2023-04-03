@@ -1498,3 +1498,50 @@ body {
     }
   }
 }
+
+
+/* own css style ==========================
+====================================================================== */
+
+/* css for loader component start */
+.rotating-circle-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.circle {
+  width: 25px;
+  height: 25px;
+  border: 4px solid #333;
+  border-top-color: #ccc;
+  border-radius: 50%;
+  animation: rotating-circle 1s linear infinite;
+}
+
+@keyframes rotating-circle {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* css for loader component end */
+
+
+/* style for error component start */
+
+.error {
+  background-color: #ffe6e6;
+  border: 1px solid #ff4d4d;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 16px;
+  margin: 0;
+}
+
+
+/* style for error component end */

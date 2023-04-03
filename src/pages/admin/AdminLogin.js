@@ -7,7 +7,7 @@ import Error from "../../components/Error";
 import { loggedInUser } from "../../features/auth/authSlice";
 import { useDispatch } from "react-redux";
 
-const Login = () => {
+const AdminLogin = () => {
   const [loginData, setLoginData] = useState({
     password: "",
     email: "",
@@ -35,7 +35,7 @@ const Login = () => {
         password: "",
         email: "",
       });
-      navigate("/coursePlayer")
+      navigate("/admin")
     };
   }, [loggedInData, isSuccess])
 
@@ -46,7 +46,7 @@ const Login = () => {
         <div>
           <img className="h-12 mx-auto" src={logo} />
           <h2 className="mt-6 text-center text-3xl font-extrabold text-slate-100">
-            Sign in to Student Account
+            Sign in to Admin Account
           </h2>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -85,27 +85,17 @@ const Login = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
+         
+        
           <div className="flex items-center justify-end">
             <div className="text-sm">
               <Link
-                to={"/register"}
+                to={"/"}
                 className="font-medium text-violet-600 hover:text-violet-500"
               >
-                Create New Account
+               Sign in as a Student
               </Link>
             </div>
-          </div>
-          <div className="flex items-center justify-end">
-            <div className="text-sm">
-              <Link
-                to={"/admin/login"}
-                className="font-medium text-violet-600 hover:text-violet-500"
-              >
-               Sign in as an Admin
-              </Link>
-            </div>
-          </div>
           </div>
 
           <div>
@@ -124,4 +114,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default AdminLogin;

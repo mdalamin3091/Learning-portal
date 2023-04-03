@@ -1,15 +1,33 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
 import navLogo from "../assets/image/learningportal.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutUser } from "../features/auth/authSlice";
+
 const Navbar = () => {
+  const { user } = useSelector((state) => state.auth);
+  const { name, role, email } = user;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    navigate("/")
+  };
+
   return (
     <nav className="shadow-md">
       <div className="max-w-7xl px-5 lg:px-0 mx-auto flex justify-between py-3">
-        <Link to={"/"}><img className="h-10" src={navLogo} /></Link>
+        <Link to={"/"}>
+          <img className="h-10" src={navLogo} />
+        </Link>
         <div className="flex items-center gap-3">
-          <Link to="./leaderboard">Leaderboard</Link>
-          <h2 className="font-bold">Saad Hasan</h2>
-          <button className="flex gap-2 border border-cyan items-center px-4 py-1 rounded-full text-sm transition-all hover:bg-cyan ">
+          {role === "student" && <Link to="./leaderboard" className="hover:bg-cyan px-4 py-1 rounded-full transition-all">Leaderboard</Link>}
+          <h2 className="font-bold">{name}</h2>
+          <button
+            className="flex gap-2 border border-cyan items-center px-4 py-1 rounded-full text-sm transition-all hover:bg-cyan"
+            onClick={handleLogout}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

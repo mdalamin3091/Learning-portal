@@ -48,6 +48,20 @@
       "role": "student",
       "name": "Arif",
       "id": 7
+    },
+    {
+      "email": "mdruhulamin861700@gmail.com",
+      "password": "$2a$10$7THBd.nnNEyRmINsPaW.O.vmZKx1SDtuwVmIvEzQbhk4NaMbONtiC",
+      "name": "Md. Ruhul Amin",
+      "role": "student",
+      "id": 8
+    },
+    {
+      "email": "masum@gmail.com",
+      "password": "$2a$10$PhsGOyNlBaTnvoDWdHQ7lefQBbziLYGkXcYXD0VFCMcsb8vUW5cgK",
+      "name": "Masum",
+      "role": "student",
+      "id": 9
     }
   ],
   "videos": [
