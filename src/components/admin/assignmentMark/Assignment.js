@@ -1,16 +1,19 @@
+import moment from "moment";
 import React from "react";
 
-const Assignment = () => {
+const Assignment = ({ mark }) => {
+  const { title, repo_link, createdAt, status, student_name } = mark;
   return (
     <tr>
-      <td className="table-td">Assignment 1 - Implement Debounce Function</td>
-      <td className="table-td">10 Mar 2023 10:58:13 PM</td>
-      <td className="table-td">Saad Hasan</td>
+      <td className="table-td">{title}</td>
+      <td className="table-td">{moment(createdAt).format('MMMM Do YYYY, h:mm:ss a')}</td>
+      <td className="table-td">{student_name}</td>
       <td className="table-td">
-        https://github.com/Learn-with-Sumit/assignment-1
+        {repo_link}
       </td>
       <td className="table-td input-mark">
         <input max="100" value="100" />
+        {/* <td className="table-td">100</td> */}
         <svg
           fill="none"
           viewBox="0 0 24 24"

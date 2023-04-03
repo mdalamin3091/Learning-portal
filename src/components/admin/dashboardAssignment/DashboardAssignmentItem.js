@@ -1,13 +1,13 @@
 import React from "react";
 
-const DashboardAssignment = () => {
+const DashboardAssignmentItem = ({ assignment }) => {
+  const { title, video_title, totalMark } = assignment;
+
   return (
     <tr>
-      <td className="table-td">Assignment 1 - Scoreboard Application</td>
-      <td className="table-td">
-        JavaScript Bangla Tutorial | JS AJAX | XMLHttp
-      </td>
-      <td className="table-td">100</td>
+      <td className="table-td">{title}</td>
+      <td className="table-td">{video_title}</td>
+      <td className="table-td">{totalMark}</td>
       <td className="table-td flex gap-x-2">
         <svg
           fill="none"
@@ -40,4 +40,4 @@ const DashboardAssignment = () => {
   );
 };
 
-export default DashboardAssignment;
+export default DashboardAssignmentItem;

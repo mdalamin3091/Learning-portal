@@ -7,7 +7,6 @@ import Quiz from "../pages/student/Quiz";
 import Layout from "../layout/Layout";
 import DashboardVideos from "../pages/admin/videos/DashboardVideos";
 import Dashboard from "../pages/admin/Dashboard";
-import DashboardAssignments from "../pages/admin/assignments/DashboardAssignments";
 import DashboardQuizes from "../pages/admin/quiz/DashboardQuizes";
 import AssignmentMark from "../pages/admin/AssignmentMark";
 import AddVideo from "../pages/admin/videos/AddVideo";
@@ -19,6 +18,7 @@ import AdminRoute from "./AdminRoute";
 import StudentRoute from "./StudentRoute";
 import AdminLogin from "../pages/admin/AdminLogin";
 import ErrorPage from "../pages/ErrorPage";
+import DashboardAssignmentsList from "../pages/admin/assignments/DashboardAssignmentsList";
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +52,17 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/coursePlayer",
+        element: (
+          <PrivateRoute>
+            {" "}
+            <StudentRoute>
+              <CoursePlayer />{" "}
+            </StudentRoute>{" "}
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/videos/:id",
         element: (
           <PrivateRoute>
             {" "}
@@ -106,7 +117,7 @@ export const router = createBrowserRouter([
         path: "/admin/assignments",
         element: (
           <AdminRoute>
-            <DashboardAssignments />
+            <DashboardAssignmentsList />
           </AdminRoute>
         ),
       },
@@ -153,7 +164,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path:"*", 
-    element:<ErrorPage/>
+    path: "*",
+    element: <ErrorPage />
   },
 ]);

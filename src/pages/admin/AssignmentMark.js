@@ -1,57 +1,78 @@
 import React from "react";
 import Assignment from "../../components/admin/assignmentMark/Assignment";
+import { useGetAssignmentMarksQuery } from "../../features/assignmentMarks/assignmentMarksApi";
+import Loader from "../../components/Loader";
+import Error from "../../components/Error";
 
 const AssignmentMark = () => {
-  return (
-    <section className="py-6 bg-primary">
-      <div className="mx-auto max-w-full px-5 lg:px-20">
-        <div className="px-3 py-20 bg-opacity-10">
-          <ul className="assignment-status">
-            <li>
-              Total <span>4</span>
-            </li>
-            <li>
-              Pending <span>3</span>
-            </li>
-            <li>
-              Mark Sent <span>1</span>
-            </li>
-          </ul>
-          <div className="overflow-x-auto mt-4">
-            <table className="divide-y-1 text-base divide-gray-600 w-full">
-              <thead>
-                <tr>
-                  <th className="table-th">Assignment</th>
-                  <th className="table-th">Date</th>
-                  <th className="table-th">Student Name</th>
-                  <th className="table-th">Repo Link</th>
-                  <th className="table-th">Mark</th>
-                </tr>
-              </thead>
+  const {
+    data: assignmentMarks,
+    isLoading,
+    isError,
+  } = useGetAssignmentMarksQuery();
 
-              <tbody className="divide-y divide-slate-600/50">
-                {/* single assignment */}
+  let content;
+  if (isLoading) {
+    content = <Loader />;
+  } else if (!isLoading && isError) {
+    content = <Error message="something error occured" />;
+  } else if (!isLoading && !isError && assignmentMarks?.length === 0) {
+    content = (
+      <Error message="assignment marks not available! add assignment marks" />
+    );
+  } else if (!isLoading && !isError && assignmentMarks?.length > 0) {
+    // calcuate pending status
+    const pendingMarksLength = assignmentMarks.filter(
+      (mark) => mark.status === "pending"
+    ).length;
 
-                <Assignment />
+    // calcuate published status
+    const MarksSent = assignmentMarks.filter(
+      (mark) => mark.status === "published"
+    ).length;
 
-                {/* <tr>
-                  <td className="table-td">
-                    Assignment 1 - Scoreboard Application
-                  </td>
-                  <td className="table-td">10 Mar 2023 10:58:13 PM</td>
-                  <td className="table-td">Saad Hasan</td>
-                  <td className="table-td">
-                    https://github.com/Learn-with-Sumit/assignment-1
-                  </td>
-                  <td className="table-td">100</td>
-                </tr> */}
-              </tbody>
-            </table>
+    content = (
+      <section className="py-6 bg-primary">
+        <div className="mx-auto max-w-full px-5 lg:px-20">
+          <div className="px-3 py-20 bg-opacity-10">
+            <ul className="assignment-status">
+              <li>
+                Total <span>{assignmentMarks.length}</span>
+              </li>
+              <li>
+                Pending <span>{pendingMarksLength}</span>
+              </li>
+              <li>
+                Mark Sent <span>{MarksSent}</span>
+              </li>
+            </ul>
+            <div className="overflow-x-auto mt-4">
+              <table className="divide-y-1 text-base divide-gray-600 w-full">
+                <thead>
+                  <tr>
+                    <th className="table-th">Assignment</th>
+                    <th className="table-th">Date</th>
+                    <th className="table-th">Student Name</th>
+                    <th className="table-th">Repo Link</th>
+                    <th className="table-th">Mark</th>
+                  </tr>
+                </thead>
+
+                <tbody className="divide-y divide-slate-600/50">
+                  {/* single assignment */}
+
+                  {assignmentMarks.map((mark) => (
+                    <Assignment key={mark.id} mark={mark} />
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  }
+  return content;
 };
 
 export default AssignmentMark;
