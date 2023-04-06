@@ -77,13 +77,11 @@ const EditAssignment = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(assignmentData);
     editAssignment({ id, data: assignmentData });
     navigate("/admin/assignments");
   };
 
   let content;
-
   if (isLoading) {
     content = <Loader />;
   } else if (isError) {

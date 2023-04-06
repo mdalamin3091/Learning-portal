@@ -144,8 +144,8 @@
     },
     {
       "title": "Js clean code assignment",
-      "video_title": " Clean Code in JavaScript | Tanay Pratap Hindi!",
-      "video_id": 5,
+      "video_title": "Debounce Function in JavaScript - JavaScript Job Interview question",
+      "video_id": 1,
       "totalMark": 100,
       "id": 7
     }
@@ -182,8 +182,8 @@
     {
       "id": 2,
       "question": "Which of the following is an example of a situation where you would use the Debounce function?",
-      "video_id": 1,
-      "video_title": "Debounce Function in JavaScript - JavaScript Job Interview question",
+      "video_id": 2,
+      "video_title": "#2 JavaScript Tips and Tricks - JavaScript Job Interview Questions",
       "options": [
         {
           "id": "1",
@@ -210,8 +210,8 @@
     {
       "id": 3,
       "question": "What is the difference between null and undefined in JavaScript?",
-      "video_id": 2,
-      "video_title": "#2 JavaScript Tips and Tricks - JavaScript Job Interview Questions",
+      "video_id": 7,
+      "video_title": "JavaScript Tutorial for Beginners: Learn JavaScript in 1 Hour",
       "options": [
         {
           "id": 1,
@@ -234,6 +234,90 @@
           "isCorrect": false
         }
       ]
+    },
+    {
+      "question": "What is the difference between let and var in JavaScript?",
+      "video_title": "Javascript ( Course Overview ) - Frontend DSA Interview Questions",
+      "video_id": 3,
+      "options": [
+        {
+          "id": 1,
+          "option": "There is no difference",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "option": "let is used to declare variables in the global scope, while var is used to declare variables in local scopes",
+          "isCorrect": false
+        },
+        {
+          "id": 3,
+          "option": "let is block-scoped, while var is function-scoped",
+          "isCorrect": true
+        },
+        {
+          "id": 4,
+          "option": "let can only be used to declare constants, while var can be used to declare variables",
+          "isCorrect": false
+        }
+      ],
+      "id": 4
+    },
+    {
+      "question": "What is a closure in JavaScript?",
+      "video_title": " Clean Code in JavaScript | Tanay Pratap Hindi!",
+      "video_id": 5,
+      "options": [
+        {
+          "id": 1,
+          "option": "A type of loop that is used for asynchronous operations",
+          "isCorrect": true
+        },
+        {
+          "id": 2,
+          "option": "A function that returns an object",
+          "isCorrect": false
+        },
+        {
+          "id": 3,
+          "option": "An object that contains multiple functions",
+          "isCorrect": false
+        },
+        {
+          "id": 4,
+          "option": "A function that has access to variables in its outer scope",
+          "isCorrect": false
+        }
+      ],
+      "id": 5
+    },
+    {
+      "question": "What is the difference between map and filter in JavaScript?",
+      "video_title": "Javascript ( Course Overview ) - Frontend DSA Interview Questions",
+      "video_id": 3,
+      "options": [
+        {
+          "id": 1,
+          "option": "There is no difference",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "option": "map is used to create a new array with modified values, while filter is used to create a new array with filtered values",
+          "isCorrect": true
+        },
+        {
+          "id": 3,
+          "option": "filter is used to create a new array with modified values, while map is used to create a new array with filtered values",
+          "isCorrect": false
+        },
+        {
+          "id": 4,
+          "option": "Both methods create new arrays with the same values",
+          "isCorrect": false
+        }
+      ],
+      "id": 6
     }
   ],
   "assignmentMark": [

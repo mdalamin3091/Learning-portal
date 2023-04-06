@@ -41,10 +41,9 @@ export const videosApi = apiSlice.injectEndpoints({
 
             async onQueryStarted({ id, data }, { queryFulfilled, dispatch }) {
                 const { data: updatedVideo } = await queryFulfilled;
-
                 try {
                     
-                    // update single all videos 
+                    // update all videos 
                     dispatch(
                         apiSlice.util.updateQueryData("getVideos", undefined, (draft) => {
                             const idx = draft.findIndex((vdo) => vdo.id == updatedVideo.id);

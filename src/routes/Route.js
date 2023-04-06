@@ -21,6 +21,7 @@ import ErrorPage from "../pages/ErrorPage";
 import DashboardAssignmentsList from "../pages/admin/assignments/DashboardAssignmentsList";
 import EditVideo from "../pages/admin/videos/EditVideo";
 import EditAssignment from "../pages/admin/assignments/EditAssignment";
+import EditQuiz from "../pages/admin/quiz/EditQuiz";
 
 export const router = createBrowserRouter([
   {
@@ -144,6 +145,14 @@ export const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <DashboardQuizes />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/admin/quiz/editQuiz/:id",
+        element: (
+          <AdminRoute>
+            <EditQuiz />
           </AdminRoute>
         ),
       },
