@@ -20,6 +20,7 @@ import AdminLogin from "../pages/admin/AdminLogin";
 import ErrorPage from "../pages/ErrorPage";
 import DashboardAssignmentsList from "../pages/admin/assignments/DashboardAssignmentsList";
 import EditVideo from "../pages/admin/videos/EditVideo";
+import EditAssignment from "../pages/admin/assignments/EditAssignment";
 
 export const router = createBrowserRouter([
   {
@@ -127,6 +128,14 @@ export const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <DashboardAssignmentsList />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/admin/assignments/editAssignment/:id",
+        element: (
+          <AdminRoute>
+            <EditAssignment />
           </AdminRoute>
         ),
       },

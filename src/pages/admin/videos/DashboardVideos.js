@@ -29,7 +29,7 @@ const DashboardVideos = () => {
 
           <tbody className="divide-y divide-slate-600/50">
             {videos.map((video, idx) => (
-              <DashboardVideo key={idx} video={video} />
+              <DashboardVideo key={idx} video={video} idx={idx}/>
             ))}
           </tbody>
         </table>

@@ -122,32 +122,11 @@
   ],
   "assignments": [
     {
-      "id": 1,
-      "title": "Assignment 1 - Implement Debounce Function",
-      "video_id": 1,
-      "video_title": "Debounce Function in JavaScript - JavaScript Job Interview question",
-      "totalMark": 100
-    },
-    {
       "id": 2,
-      "title": "Assignment 2 - Implement Best Practices",
+      "title": "Implement Best Practices with js trips and tricks",
       "video_id": 2,
       "video_title": "#2 JavaScript Tips and Tricks - JavaScript Job Interview Questions",
       "totalMark": 100
-    },
-    {
-      "title": "Assignment - 3 Implement Javascript clean code ",
-      "video_title": " Clean Code in JavaScript | Tanay Pratap Hindi!",
-      "video_id": "5",
-      "totalMark": "100",
-      "id": 3
-    },
-    {
-      "title": "DSA project",
-      "video_title": "Javascript ( Course Overview ) - Frontend DSA Interview Questions",
-      "video_id": 3,
-      "totalMark": 100,
-      "id": 4
     },
     {
       "title": "python Django project",
@@ -155,6 +134,20 @@
       "video_id": 6,
       "totalMark": 100,
       "id": 5
+    },
+    {
+      "title": "DSA assignment project",
+      "video_title": "Javascript ( Course Overview ) - Frontend DSA Interview Questions",
+      "video_id": 3,
+      "totalMark": 100,
+      "id": 6
+    },
+    {
+      "title": "Js clean code assignment",
+      "video_title": " Clean Code in JavaScript | Tanay Pratap Hindi!",
+      "video_id": 5,
+      "totalMark": 100,
+      "id": 7
     }
   ],
   "quizzes": [

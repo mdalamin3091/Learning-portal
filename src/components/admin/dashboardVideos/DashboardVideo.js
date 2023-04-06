@@ -3,7 +3,7 @@ import React from 'react'
 import { useDeleteVideoMutation } from '../../../features/videos/videosApi';
 import { Link } from 'react-router-dom';
 
-const DashboardVideo = ({ video }) => {
+const DashboardVideo = ({ video, idx }) => {
     const { title, description, id } = video || {};
     const [deleteVideo, { data, isLoading, isSuccess }] = useDeleteVideoMutation();
 
@@ -19,7 +19,7 @@ const DashboardVideo = ({ video }) => {
     return (
         <tr>
             <td className="table-td">
-                Lesson {id} - {title}
+                Lesson {idx + 1} - {title}
             </td>
             <td className="table-td">
                 {
