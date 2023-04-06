@@ -30,8 +30,9 @@ const DashboardAssignmentsList = () => {
           </thead>
 
           <tbody className="divide-y divide-slate-600/50">
-            {assignments?.map((assignment) => (
+            {assignments?.map((assignment, idx) => (
               <DashboardAssignmentItem
+                idx={idx}
                 key={assignment.id}
                 assignment={assignment}
               />

@@ -19,6 +19,7 @@ import StudentRoute from "./StudentRoute";
 import AdminLogin from "../pages/admin/AdminLogin";
 import ErrorPage from "../pages/ErrorPage";
 import DashboardAssignmentsList from "../pages/admin/assignments/DashboardAssignmentsList";
+import EditVideo from "../pages/admin/videos/EditVideo";
 
 export const router = createBrowserRouter([
   {
@@ -110,6 +111,14 @@ export const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <DashboardVideos />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/admin/videos/editVideo/:id",
+        element: (
+          <AdminRoute>
+            <EditVideo />
           </AdminRoute>
         ),
       },

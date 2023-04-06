@@ -7,9 +7,16 @@ const assignmentMarksApi = apiSlice.injectEndpoints({
         }),
 
         getAssignmentMark: builder.query({
-            query: (id) => `/assignmentMark/${id}`,
+            query: (id) => `/assignmentMark?student_id=${id}`,
         }),
-
+        
+        addAssignmentMark: builder.mutation({
+            query: (data) => ({
+                url: "/assignmentMark",
+                method: "POST",
+                body: data,
+            })
+        }),
         editAssignmentMark: builder.mutation({
             query: ({ id, data }) => ({
                 url: `/assignmentMark/${id}`,
@@ -24,4 +31,5 @@ export const {
     useEditAssignmentMarkMutation,
     useGetAssignmentMarkQuery,
     useGetAssignmentMarksQuery,
+    useAddAssignmentMarkMutation,
 } = assignmentMarksApi;

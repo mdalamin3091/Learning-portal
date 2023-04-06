@@ -5,7 +5,7 @@ const DashboardQuiz = ({ quiz, quizNum }) => {
   return (
     <tr>
       <td className="table-td">
-        Quiz {quizNum} - {question}
+        Quiz {quizNum} - {question.length > 60 ? question.slice(0, 75) + "....." : question}
       </td>
       <td className="table-td">{video_title}</td>
       <td className="table-td flex gap-x-2 justify-center">

@@ -1,17 +1,19 @@
 import { Fragment } from "react";
 import Options from "./Options";
+import { useLocation } from "react-router-dom";
 
-const Questions = () => {
+const Questions = ({ quizzes }) => {
   return (
     <div className="quiz">
       {/* <Question /> */}
-      <Fragment>
-        <h4 className="question">
-          Quiz 1 - What is a Debounce function in JavaScript?
-        </h4>
-       
-          <Options />
-      </Fragment>
+      {quizzes.map((quiz, idx) => (
+        <Fragment key={quiz.id}>
+          <h4 className="question">
+            Quiz {idx + 1} - {quiz.question}
+          </h4>
+          <Options options={quiz.options} qId={quiz.id}/>
+        </Fragment>
+      ))}
     </div>
   );
 };

@@ -1,34 +1,26 @@
+import React, { useState } from "react";
 
-import React from 'react'
+const Options = ({ options, qId }) => {
+    // console.log(options)
+    // const correctOptions = options.filter(option => option.isCorrect);
+    // const [selectedOptions, setSelectedOptions] = useState([]);
 
-const Options = ({Options, q1}) => {
+    const handleChange = (option) => {
+        
+    }
+
     return (
-        <form className="quizOptions">
-            {/* <!-- Option 1 --> */}
-            <label htmlFor="option1_q1">
-                <input type="checkbox" id="option1_q1" />A function that is called
-                after a certain time interval
-            </label>
+        <div className="quizOptions">
 
-            {/* <!-- Option 2 --> */}
-            <label htmlFor="option2_q1">
-                <input type="checkbox" id="option2_q1" />A function that is called
-                after a certain time interval
-            </label>
+            {/* <!-- Options --> */}
+            {options.map((option, idx) => (
+                <label htmlFor={`option${idx + 1}_q${qId}`} key={idx}>
+                    <input type="checkbox" id={`option${idx + 1}_q${qId}`} onChange={() => handleChange(option)} />
+                    {option.option}
+                </label>
+            ))}
+        </div>
+    );
+};
 
-            {/* <!-- Option 3 --> */}
-            <label htmlFor="option3_q1">
-                <input type="checkbox" id="option3_q1" />A function that is called
-                after a certain time interval
-            </label>
-
-            {/* <!-- Option 4 --> */}
-            <label htmlFor="option4_q1">
-                <input type="checkbox" id="option4_q1" />A function that is called
-                after a certain time interval
-            </label>
-        </form>
-    )
-}
-
-export default Options
+export default Options;

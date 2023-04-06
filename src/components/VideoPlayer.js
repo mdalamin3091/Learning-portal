@@ -6,38 +6,38 @@ import { useGetQuizzesQuery } from "../features/quiz/quizApi";
 import AssignmentSubmitModal from "./AssignmentSubmitModal";
 
 const VideoPlayer = ({ video, isOpen, setIsOpen }) => {
-  const { id, url, title, createdAt, duration, views, description } = video;
-  const [isAssignment, setIsAssignment] = useState(false);
-  const [isQuiz, setIsQuiz] = useState(false);
+  const { id, url, title, createdAt, description } = video;
+  const [assignment, setAssignment] = useState({});
+  const [availableQuiz, setAvailableQuiz] = useState([]);
   const { data: assignments, isSuccess } = useGetAssignmentsQuery();
   const { data: quizzes, isSuccess: isQuizzesSuccess } = useGetQuizzesQuery();
 
   // modal functionality
-
   const openModal = () => {
-    setIsOpen(true)
-  }
+    setIsOpen(true);
+  };
+
   const closeModal = () => {
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
 
   // check assignment available or not in this video
   useEffect(() => {
     if (isSuccess) {
-      const assign = assignments.filter(
+      const assign = assignments.find(
         (assignment) => assignment.video_id === id
       );
-      if (assign?.length > 0) setIsAssignment(true);
+      if (assign?.id) setAssignment(assign);
     }
-  }, [isSuccess, assignments]);
+  }, [isSuccess, assignments, id]);
 
   // check quizzes available or not in this video;
   useEffect(() => {
     if (isQuizzesSuccess) {
       const quiz = quizzes.filter((q) => q.video_id === id);
-      if (quiz?.length > 0) setIsQuiz(true);
+      if (quiz?.length > 0) setAvailableQuiz(quiz);
     }
-  }, [isQuizzesSuccess, quizzes]);
+  }, [isQuizzesSuccess, quizzes, id]);
 
   return (
     <div className="col-span-full w-full space-y-8 lg:col-span-2">
@@ -59,7 +59,7 @@ const VideoPlayer = ({ video, isOpen, setIsOpen }) => {
         </h2>
 
         <div className="flex gap-4">
-          {isAssignment && (
+          {assignment?.id && (
             <button
               onClick={() => openModal()}
               className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary"
@@ -67,9 +67,10 @@ const VideoPlayer = ({ video, isOpen, setIsOpen }) => {
               এসাইনমেন্ট
             </button>
           )}
-          {isQuiz && (
+          {availableQuiz.length > 0 && (
             <Link
               to={`/coursePlayer/quiz/${id}`}
+              state={{availableQuiz, video}}
               className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary"
             >
               কুইজে অংশগ্রহণ করুন
@@ -77,7 +78,12 @@ const VideoPlayer = ({ video, isOpen, setIsOpen }) => {
           )}
         </div>
         <p className="mt-4 text-sm text-slate-400 leading-6">{description}</p>
-        <AssignmentSubmitModal isOpen={isOpen} openModal={openModal} closeModal={closeModal} />
+        <AssignmentSubmitModal
+          isOpen={isOpen}
+          assignment={assignment}
+          openModal={openModal}
+          closeModal={closeModal}
+        />
       </div>
     </div>
   );

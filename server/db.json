@@ -82,6 +82,42 @@
       "views": "91.2K",
       "duration": "31:30",
       "createdAt": "2023-02-24T17:59:00.000Z"
+    },
+    {
+      "title": "Javascript ( Course Overview ) - Frontend DSA Interview Questions",
+      "description": "In this Course we will cover all the major DSA topics like Arrays, String, Recursion, LinkedList, Sorting and Searching algorithms, as well as advance topics like Trees, Graphs, Dynamic Programming, etc In easiest way possible!",
+      "url": "https://www.youtube.com/watch?v=PbQPUPpM1vc",
+      "views": "16k",
+      "duration": "2:30",
+      "createdAt": "2023-04-05T09:10:40.756Z",
+      "id": 3
+    },
+    {
+      "title": " Clean Code in JavaScript | Tanay Pratap Hindi!",
+      "description": "In this video, you will learn about the 10 best practices for JavaScript developers, whether you are a beginner or an experienced developer. The practices include using descriptive variable names, declaring variables properly, using arrow functions and promises, and proper error handling. The video also covers using the latest ECMAScript features, proper naming conventions, and object destructuring. ",
+      "url": "https://www.youtube.com/embed/UTzwZ_JZ9IE",
+      "views": "25k",
+      "duration": "9.30",
+      "createdAt": "2023-04-05T16:57:43.826Z",
+      "id": 5
+    },
+    {
+      "title": "Learn Python - Full Course for Beginners Tutorial",
+      "description": "This video is a complete tutorial for beginners to learn the Python programming language. The instructor covers topics like variables, data types, loops, functions, and more.",
+      "url": "https://www.youtube.com/watch?v=rfscVS0vtbw",
+      "views": "25.3k",
+      "duration": "4.30",
+      "createdAt": "2023-04-06T05:29:34.346Z",
+      "id": 6
+    },
+    {
+      "title": "JavaScript Tutorial for Beginners: Learn JavaScript in 1 Hour",
+      "description": "This video is a quick tutorial for beginners to learn the basics of JavaScript programming language. The instructor covers topics like variables, functions, loops, and more.",
+      "url": "https://www.youtube.com/watch?v=W6NZfCO5SIk",
+      "views": "45k",
+      "duration": "1.00",
+      "createdAt": "2023-04-06T05:38:21.931Z",
+      "id": 7
     }
   ],
   "assignments": [
@@ -98,6 +134,27 @@
       "video_id": 2,
       "video_title": "#2 JavaScript Tips and Tricks - JavaScript Job Interview Questions",
       "totalMark": 100
+    },
+    {
+      "title": "Assignment - 3 Implement Javascript clean code ",
+      "video_title": " Clean Code in JavaScript | Tanay Pratap Hindi!",
+      "video_id": "5",
+      "totalMark": "100",
+      "id": 3
+    },
+    {
+      "title": "DSA project",
+      "video_title": "Javascript ( Course Overview ) - Frontend DSA Interview Questions",
+      "video_id": 3,
+      "totalMark": 100,
+      "id": 4
+    },
+    {
+      "title": "python Django project",
+      "video_title": "Learn Python - Full Course for Beginners Tutorial",
+      "video_id": 6,
+      "totalMark": 100,
+      "id": 5
     }
   ],
   "quizzes": [
@@ -222,6 +279,30 @@
       "mark": 50,
       "repo_link": "https://github.com/Learn-with-Sumit/assignment-1",
       "status": "published"
+    },
+    {
+      "student_id": 5,
+      "student_name": "Ferdous",
+      "assignment_id": 1,
+      "title": "Assignment 1 - Implement Debounce Function",
+      "createdAt": "2023-04-04T05:26:39.740Z",
+      "totalMark": 100,
+      "mark": 0,
+      "repo_link": "http://localhost:3000/coursePlayer",
+      "status": "pending",
+      "id": 4
+    },
+    {
+      "student_id": 5,
+      "student_name": "Ferdous",
+      "assignment_id": 2,
+      "title": "Assignment 2 - Implement Best Practices",
+      "createdAt": "2023-04-04T05:27:55.092Z",
+      "totalMark": 100,
+      "mark": 0,
+      "repo_link": "http://localhost:3000/videos/2",
+      "status": "pending",
+      "id": 5
     }
   ],
   "quizMark": [

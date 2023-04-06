@@ -1,11 +1,13 @@
 import React from "react";
 
-const DashboardAssignmentItem = ({ assignment }) => {
+const DashboardAssignmentItem = ({ assignment, idx }) => {
   const { title, video_title, totalMark } = assignment;
 
   return (
     <tr>
-      <td className="table-td">{title}</td>
+      <td className="table-td">
+        Assignment - {idx + 1} {title}
+      </td>
       <td className="table-td">{video_title}</td>
       <td className="table-td">{totalMark}</td>
       <td className="table-td flex gap-x-2">

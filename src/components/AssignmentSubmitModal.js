@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import TextInput from "./shared/TextInput";
+import { useSelector } from "react-redux";
+import moment from "moment";
+import { useAddAssignmentMarkMutation } from "../features/assignmentMarks/assignmentMarksApi";
 
-const AssignmentSubmitModal = ({ isOpen, closeModal }) => {
+const AssignmentSubmitModal = ({ isOpen, closeModal, assignment }) => {
+
+  const { user } = useSelector(state => state.auth);
+  const { id, name, email } = user || {};
+  const { id: assignment_id, title, totalMark } = assignment;
+  const [repoLink, setRepoLink] = useState("");
+  const [addAssignmentMark, { data, isSuccess }] = useAddAssignmentMarkMutation();
+
+  const assignmentData = {
+    student_id: id,
+    student_name: name,
+    assignment_id,
+    title,
+    createdAt: new Date().toISOString(),
+    totalMark,
+    mark: 0,
+    repo_link: repoLink,
+    status: "pending"
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    addAssignmentMark(assignmentData);
+    setRepoLink("");
     closeModal();
   };
 
@@ -21,6 +45,8 @@ const AssignmentSubmitModal = ({ isOpen, closeModal }) => {
             <div className="grid grid-cols-6 gap-6">
               <div className="col-span-6 sm:col-span-3">
                 <TextInput
+                  value={repoLink}
+                  onChange={(e) => setRepoLink(e.target.value)}
                   title="Repository Link"
                   type="text"
                   placeholder="Enter repository link"
