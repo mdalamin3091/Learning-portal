@@ -2,19 +2,34 @@
 import React from 'react'
 import { useDeleteVideoMutation } from '../../../features/videos/videosApi';
 import { Link } from 'react-router-dom';
+import { useDeleteAssignmentMutation, useGetAssignmentsQuery } from '../../../features/assignments/assignmentsApi';
+import { useDeleteQuizMutation, useGetQuizzesQuery } from '../../../features/quiz/quizApi';
 
 const DashboardVideo = ({ video, idx }) => {
     const { title, description, id } = video || {};
-    const [deleteVideo, { data, isLoading, isSuccess }] = useDeleteVideoMutation();
+    const [deleteVideo, { data, isSuccess }] = useDeleteVideoMutation();
+    const { data: assignments } = useGetAssignmentsQuery();
+    const { data: quizzes } = useGetQuizzesQuery();
+    const [deleteAssignment] = useDeleteAssignmentMutation();
+    const [deleteQuiz] = useDeleteQuizMutation();
 
     const handleDeleteVideo = () => {
+
         deleteVideo(id);
-    }
+        const matchedAssignment = assignments.find(assign => assign.video_id == id);
+        
+        // delete assignment
+        if (matchedAssignment) {
+            deleteAssignment(matchedAssignment.id);
+        }
 
-    if (isSuccess) {
-        console.log(data);
-    }
+        const matchedQuizzes = quizzes.filter(quiz => quiz.video_id == id);
 
+        // delete quizzes 
+        if (matchedQuizzes.length > 0) {
+            matchedQuizzes.forEach(quiz => deleteQuiz(quiz.id));
+        }
+    }
 
     return (
         <tr>

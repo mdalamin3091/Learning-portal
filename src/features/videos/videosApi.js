@@ -38,7 +38,6 @@ export const videosApi = apiSlice.injectEndpoints({
                 method: "PATCH",
                 body: data,
             }),
-
             async onQueryStarted({ id, data }, { queryFulfilled, dispatch }) {
                 const { data: updatedVideo } = await queryFulfilled;
                 try {
@@ -73,7 +72,7 @@ export const videosApi = apiSlice.injectEndpoints({
                 method: "DELETE",
             }),
 
-            //   optimistic update videos cache after deleting a video
+            // optimistic update videos cache after deleting a video
             async onQueryStarted(arg, { queryFulfilled, dispatch }) {
                 const patchResult = dispatch(
                     apiSlice.util.updateQueryData("getVideos", undefined, (draft) => {
