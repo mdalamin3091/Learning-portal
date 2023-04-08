@@ -62,6 +62,13 @@
       "name": "Masum",
       "role": "student",
       "id": 9
+    },
+    {
+      "email": "sulaiman@gmail.com",
+      "password": "$2a$10$Lv6.J0vk8tkl0/OzQI6ikucPOLI0.Szeb6juoyTdz5Cy24CLxaVI6",
+      "name": "Sulaiman",
+      "role": "student",
+      "id": 10
     }
   ],
   "videos": [
@@ -364,6 +371,42 @@
       "repo_link": "http://localhost:3000/videos/2",
       "status": "published",
       "id": 5
+    },
+    {
+      "student_id": 8,
+      "student_name": "Md. Ruhul Amin",
+      "assignment_id": 7,
+      "title": "Js clean code assignment",
+      "createdAt": "2023-04-07T10:42:48.626Z",
+      "totalMark": 100,
+      "mark": 100,
+      "repo_link": "http://localhost:3000/coursePlayer/videos/1",
+      "status": "published",
+      "id": 6
+    },
+    {
+      "student_id": 7,
+      "student_name": "Arif",
+      "assignment_id": 7,
+      "title": "Js clean code assignment",
+      "createdAt": "2023-04-08T08:27:41.350Z",
+      "totalMark": 100,
+      "mark": 70,
+      "repo_link": "http://localhost:3000/coursePlayer/videos/1",
+      "status": "published",
+      "id": 7
+    },
+    {
+      "student_id": 10,
+      "student_name": "Sulaiman",
+      "assignment_id": 7,
+      "title": "Js clean code assignment",
+      "createdAt": "2023-04-08T16:34:47.497Z",
+      "totalMark": 100,
+      "mark": 0,
+      "repo_link": "https://learning-portal-32.netlify.app/coursePlayer/videos/1",
+      "status": "pending",
+      "id": 8
     }
   ],
   "quizMark": [
@@ -378,6 +421,18 @@
       "totalWrong": 1,
       "totalMark": 10,
       "mark": 5
+    },
+    {
+      "student_id": 8,
+      "student_name": "Md. Ruhul Amin",
+      "video_id": 7,
+      "video_title": "JavaScript Tutorial for Beginners: Learn JavaScript in 1 Hour",
+      "totalQuiz": 1,
+      "totalCorrect": 1,
+      "totalWrong": 1,
+      "totalMark": 5,
+      "mark": 5,
+      "id": 2
     }
   ]
 }

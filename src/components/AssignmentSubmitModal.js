@@ -4,13 +4,13 @@ import { useSelector } from "react-redux";
 import moment from "moment";
 import { useAddAssignmentMarkMutation } from "../features/assignmentMarks/assignmentMarksApi";
 
-const AssignmentSubmitModal = ({ isOpen, closeModal, assignment }) => {
+const AssignmentSubmitModal = ({ isOpen, closeModal, assignment, setIsSubmit }) => {
 
   const { user } = useSelector(state => state.auth);
-  const { id, name, email } = user || {};
+  const { id, name } = user || {};
   const { id: assignment_id, title, totalMark } = assignment;
   const [repoLink, setRepoLink] = useState("");
-  const [addAssignmentMark, { data, isSuccess }] = useAddAssignmentMarkMutation();
+  const [addAssignmentMark] = useAddAssignmentMarkMutation();
 
   const assignmentData = {
     student_id: id,
@@ -29,6 +29,7 @@ const AssignmentSubmitModal = ({ isOpen, closeModal, assignment }) => {
     addAssignmentMark(assignmentData);
     setRepoLink("");
     closeModal();
+    setIsSubmit(true);
   };
 
   return (

@@ -1,10 +1,10 @@
 import { Fragment } from "react";
 import Options from "./Options";
-import { useLocation } from "react-router-dom";
 
-const Questions = ({ quizzes }) => {
+const Questions = ({ quizzes}) => {
   return (
     <div className="quiz">
+      
       {/* <Question /> */}
       {quizzes.map((quiz, idx) => (
         <Fragment key={quiz.id}>

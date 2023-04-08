@@ -22,6 +22,8 @@ import DashboardAssignmentsList from "../pages/admin/assignments/DashboardAssign
 import EditVideo from "../pages/admin/videos/EditVideo";
 import EditAssignment from "../pages/admin/assignments/EditAssignment";
 import EditQuiz from "../pages/admin/quiz/EditQuiz";
+import CourseLayout from "../layout/CourseLayout";
+import VideoPlayer from "../components/VideoPlayer";
 
 export const router = createBrowserRouter([
   {
@@ -59,10 +61,20 @@ export const router = createBrowserRouter([
           <PrivateRoute>
             {" "}
             <StudentRoute>
-              <CoursePlayer />{" "}
+              <CourseLayout />{" "}
             </StudentRoute>{" "}
           </PrivateRoute>
         ),
+        children:[
+          {
+            path:"/coursePlayer", 
+            element:<VideoPlayer/>
+          },
+          {
+            path:"/coursePlayer/videos/:id", 
+            element:<VideoPlayer/>
+          }
+        ]
       },
       {
         path: "/videos/:id",
@@ -88,7 +100,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/coursePlayer/quiz/:id",
+        path: "/coursePlayer/videos/quiz/:id",
         element: (
           <PrivateRoute>
             <StudentRoute>

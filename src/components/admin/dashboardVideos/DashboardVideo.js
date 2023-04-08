@@ -40,8 +40,7 @@ const DashboardVideo = ({ video, idx }) => {
                 {
                     description?.length > 60 ? description?.slice(0, 60) + "..." : description
                 }
-
-                {/* {description.slice(0, 60)}..... */}
+                
             </td>
             <td className="table-td flex gap-x-2">
                 <span onClick={handleDeleteVideo}>

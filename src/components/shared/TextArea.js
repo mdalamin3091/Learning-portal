@@ -12,7 +12,7 @@ const TextArea = ({ title, ...attributes }) => {
                     style={{ color: "black" }}
                     {...attributes}
                     required
-                    rows="5"
+                    rows="10"
                     className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2"
                 ></textarea>
             </div>

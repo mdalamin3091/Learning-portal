@@ -14,7 +14,6 @@ const Assignment = ({ mark: assignmentMark }) => {
       id,
       data: { ...mark, mark: Number(inputMark), status: "published" },
     });
-    // console.log({ id, data: { ...mark, mark: inputMark } })
   };
 
   return (
